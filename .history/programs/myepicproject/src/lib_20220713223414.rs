@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("HADgwLwuFfmwEgbNvLD45P1K6JzgvAWb9LR3eQu267ci");
+declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
 
 #[program]
 pub mod myepicproject {
@@ -19,10 +19,10 @@ pub mod myepicproject {
 
     let item = ItemStruct {
         gif_link: gif_link.to_string(),
-        user_address: *user.to_account_info().key, 
+        user_address: *user.to_account_info().key() 
     };
 
-    base_account.gif_list.push(item);
+    base_account.total_gifs.push(item);
     base_account.total_gifs += 1;
     Ok(())
   }
