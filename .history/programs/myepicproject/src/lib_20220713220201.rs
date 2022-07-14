@@ -13,11 +13,7 @@ pub mod myepicproject {
     Ok(())
   }
 
-  pub fn add_gif(ctx: Context<AddGif>) -> Result<()> {
-    let base_account = &mut ctx.accounts.base_account;
-    base_account.total_gifs += 1;
-    Ok(())
-  }
+  
 }
 
 // Attach certain variables to the StartStuffOff context.
