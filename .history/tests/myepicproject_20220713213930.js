@@ -17,8 +17,7 @@ const main = async () => {
       baseAccount: baseAccount.publicKey,
       user: provider.wallet.publicKey,
       systemProgram: SystemProgram.programId,
-    },
-    signers: [baseAccount],
+    }
   });
 
   console.log("📝 Your transaction signature", tx);

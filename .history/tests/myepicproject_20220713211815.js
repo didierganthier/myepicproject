@@ -9,22 +9,9 @@ const main = async () => {
   anchor.setProvider(provider);
 
   const program = anchor.workspace.Myepicproject;
-
-  const baseAccount = anchor.web3.Keypair.generate();
-
-  const tx = await program.rpc.startStuffOff({
-    accounts: {
-      baseAccount: baseAccount.publicKey,
-      user: provider.wallet.publicKey,
-      systemProgram: SystemProgram.programId,
-    },
-    signers: [baseAccount],
-  });
+  const tx = await program.rpc.startStuffOff();
 
   console.log("📝 Your transaction signature", tx);
-
-  let account = await program.account.baseAccount.fetch(baseAccount.publicKey);
-  console.log('👀 GIF Count', account.totalGifs.toString())
 }
 
 const runMain = async () => {
